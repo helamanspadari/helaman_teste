@@ -7,12 +7,14 @@ require_once 'App/Core/Core.php';
 require_once 'lib/Database/Connection.php';
 
 // Autoload composer
-//require_once 'vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 // Controllers
 require_once 'App/Controller/ErroController.php';
 require_once 'App/Controller/SiteController.php';
 require_once 'App/Controller/HomeController.php';
+require_once 'App/Controller/MotoristaController.php';
+require_once 'App/Controller/PassageiroController.php';
 
 // Models
 require_once 'App/Model/Pessoa.php';

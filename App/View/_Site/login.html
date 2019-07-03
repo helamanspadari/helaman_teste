@@ -1,0 +1,53 @@
+<style>
+    .btnLogin {
+        width: 100%;
+        margin-top: 4%;
+        background-color: #73f;
+        border: 2px solid #73f;
+    }
+
+    .btnLogin:hover {
+        width: 100%;
+        margin-top: 4%;
+        background-color: #333;
+        border: 2px solid #73f;
+    }
+</style>
+<br><br>
+<div class="row">
+
+    <div class="col-12">
+
+        <center>
+            <h3>Acessar Sistema</h3>
+        </center>
+        <br>
+
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+
+                <form action="http://localhost/helaman_teste/?page=home" method="POST">
+
+                    <label for="">
+                        <h5>E-mail</h5>
+                    </label>
+                    <input type="email" name="email" class="form-control" autofocus>
+
+                    <br>
+
+                    <label for="">
+                        <h5>Password</h5>
+                    </label>
+                    <input type="password" name="password" class="form-control" autofocus>
+
+                    <input type="submit" class="btn btn-primary btnLogin" value="Entrar">
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
