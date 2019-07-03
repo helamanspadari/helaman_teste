@@ -11,15 +11,18 @@ require_once 'vendor/autoload.php';
 
 // Controllers
 require_once 'App/Controller/ErroController.php';
+require_once 'App/Controller/LoginController.php';
 require_once 'App/Controller/SiteController.php';
 require_once 'App/Controller/HomeController.php';
 require_once 'App/Controller/MotoristaController.php';
 require_once 'App/Controller/PassageiroController.php';
+require_once 'App/Controller/CorridaController.php';
 
 // Models
 require_once 'App/Model/Pessoa.php';
 require_once 'App/Model/Motorista.php';
 require_once 'App/Model/Passageiro.php';
+require_once 'App/Model/Corrida.php';
 
 // Interfaces
 // Estão sendo chamadas das proprias classes
