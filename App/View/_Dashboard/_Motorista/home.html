@@ -1,0 +1,86 @@
+<section>
+
+    <br>
+    <h1>Motoristas</h1>
+    <br>
+    <article>
+
+        <header>
+            <a href="http://localhost/helaman_teste/?page=motorista&method=new"
+                class="btn btn-secondary float-right">Adicionar</a>
+            <h2>Lista de Motoristas</h2>
+        </header>
+        <br>
+
+        <div class="row">
+            <div class="col-12">
+
+                
+                    <table  class="table table-responsive table-hover" id="id_da_table">
+                        <thead style="background-color: #73f; color: white;">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">NOME</th>
+                                <th scope="col">NASCIMENTO</th>
+                                <th scope="col">SEXO</th>
+                                <th scope="col">DOCUMENTO</th>
+                                <th scope="col">VEICULO</th>
+                                <th scope="col">STATUS</th>
+                                <th scope="col">CORRIDA</th>
+                                <th scope="col">ALTERAR</th>
+                                <th scope="col">INATIVAR</th>
+                            </tr>
+                        </thead>
+                        {% if erro %}
+                        <td colspan="10">{{ erro }}</td>
+                        {% endif %}
+                        <tbody>
+                            {% for motorista in motoristas %}
+                            <tr>
+                                <th scope="row">{{ motorista.getId }}</th>
+                                <td>{{ motorista.getNome }}</td>
+                                <td>{{ motorista.getNascimento }}</td>
+                                <td>
+                                    {% if motorista.getSexo == 'Masculino' %}
+                                    <span>M</span>
+                                    {% else %}
+                                    <span>F</span>
+                                    {% endif %}
+                                </td>
+                                <td>{{ motorista.getDocumento }}</td>
+                                <td>{{ motorista.getModeloCarro }}</td>
+                                <td>
+                                    {% if motorista.getStatusMotorista == true %}
+                                    <span style="color: green;">ATIVO</span>
+                                    {% else %}
+                                    <span style="color: red;">INATIVO</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if motorista.getStatusCorridaMotorista == true %}
+                                    <span style="color: red;">OCUPADO</span>
+                                    {% else %}
+                                    <span style="color: green;">LIVRE</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <a href="http://localhost/helaman_teste/?page=motorista&method=alter&id={{ motorista.getId }}"
+                                        class="btn btn-sm btn-warning">ALTERAR</a>
+                                </td>
+                                <td>
+                                    <a href="http://localhost/helaman_teste/?page=motorista&method=remove&id={{ motorista.getId }}"
+                                        class="btn btn-sm btn-danger">INATIVAR</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+
+            </div>
+        </div>
+
+
+
+    </article>
+</section>

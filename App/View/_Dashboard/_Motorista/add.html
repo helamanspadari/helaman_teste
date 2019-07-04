@@ -1,0 +1,79 @@
+<section>
+
+    <br><br>
+    
+    <article>
+
+            <header>
+                    <a class="btn btn-primary float-right"
+                        href="http://localhost/helaman_teste/?page=motorista">Voltar</a>
+                    <h2>Novo Motorista</h2>
+                </header>
+        <br>
+
+        <div class="row">
+            <div class="col-12">
+
+                <form action="http://localhost/helaman_teste/?page=motorista&method=insert" method="POST">
+
+                    <fieldset>
+                        <legend class="">
+                            Dados do Motorista
+                        </legend>
+
+                        <div class="row">
+                            <div class="col-12">
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label for="">Nome Completo</label>
+                                        <input type="text" name="nome" class="form-control" placeholder="Nome Completo"
+                                            autofocus required>
+                                    </div>
+                                    <div class="col-3">
+                                        <label for="">Nascimento</label>
+                                        <input type="date" name="nascimento" class="form-control"
+                                            placeholder="Data de nascimento" autofocus required>
+                                    </div>
+                                    <div class="col-3">
+                                        <label for="">Sexo</label>
+                                        <select name="sexo" class="form-control" autofocus id="" required>
+                                            <option value="Masculino">Masculino</option>
+                                            <option value="Feminino">Feminino</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <br>
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label for="">CPF</label>
+                                        <input type="text" name="documento" class="form-control" autofocus required>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="">Modelo do Veiculo</label>
+                                        <input type="text" name="modeloCarro" class="form-control" autofocus required>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <br>
+                        <div>
+                            <input type="submit" value="Salvar" style="width: 100%;" class="btn btn-lg btn-primary"
+                                autofocus>
+                        </div>
+
+                    </fieldset>
+
+
+                </form>
+
+            </div>
+        </div>
+
+
+
+    </article>
+</section>

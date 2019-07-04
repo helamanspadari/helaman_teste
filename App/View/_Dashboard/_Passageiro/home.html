@@ -1,0 +1,72 @@
+<section>
+
+    <br>
+    <h1>Passageiros</h1>
+    <br>
+
+    <article>
+
+        <header>
+            <a href="http://localhost/helaman_teste/?page=passageiro&method=new"
+                class="btn btn-secondary float-right">Adicionar</a>
+            <h2>Lista de Passageiros</h2>
+        </header>
+        <br>
+
+        <div class="row">
+            <div class="col-12">
+
+                <table class="table table-responsive table-hover" id="id_da_table">
+                    <thead style="background-color: #73f; color: white;">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col" style="width: 40%;">NOME</th>
+                            <th scope="col">NASCIMENTO</th>
+                            <th scope="col">SEXO</th>
+                            <th scope="col">DOCUMENTO</th>
+                            <th scope="col" style="width: 15%;">STATUS</th>
+                            <th scope="col">ALTERAR</th>
+                            <!--<th scope="col">EXCLUIR</th>-->
+                        </tr>
+                    </thead>
+                    {% if erro %}
+                    <td colspan="9">{{ erro }}</td>
+                    {% endif %}
+                    <tbody>
+                        {% for passageiro in passageiros %}
+                        <tr>
+                            <th scope="row">{{ passageiro.getId }}</th>
+                            <td>{{ passageiro.getNome }}</td>
+                            <td>{{ passageiro.getNascimento }}</td>
+                            <td>
+                                {% if passageiro.getSexo == 'Masculino' %}
+                                <span>M</span>
+                                {% else %}
+                                <span>F</span>
+                                {% endif %}
+                            </td>
+                            <td>{{ passageiro.getDocumento }}</td>
+                            <td>
+                                {% if passageiro.getStatusPassageiro == true %}
+                                <span style="color: red;">EM CORRIDA</span>
+                                {% else %}
+                                <span style="color: green;">LIVRE</span>
+                                {% endif %}
+                            </td>
+                            <td><a href="http://localhost/helaman_teste/?page=passageiro&method=alter&id={{ passageiro.getId }}"
+                                    class="btn btn-sm btn-warning">ALTERAR</a>
+                            </td>
+                            <!--<td><a href="http://localhost/helaman_teste/?page=passageiro&method=remove&id={{ passageiro.getId }}"
+                                    class="btn btn-sm btn-danger">EXCLUIR</a>-->
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+
+                </table>
+
+            </div>
+        </div>
+
+    </article>
+</section>

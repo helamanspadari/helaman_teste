@@ -1,0 +1,71 @@
+<section>
+    <br><br>
+    <article>
+        <header>
+            <a class="btn btn-primary float-right" href="http://localhost/helaman_teste/?page=passageiro">Voltar</a>
+            <h2>Alterar Passageiro</h2>
+        </header>
+        <br>
+        <fieldset>
+            <legend>Dados do Passageiro</legend>
+
+            <div class="row">
+                <div class="col-12">
+
+                    <form action="http://localhost/helaman_teste/?page=passageiro&method=update&id={{id}}" method="POST">
+
+                        <div class="row">
+                            <div class="col-12">
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label for="">Nome Completo</label>
+                                        <input type="text" name="nome" value="{{ nome }}" class="form-control"
+                                            placeholder="Nome Completo" autofocus>
+                                    </div>
+                                </div>
+
+                                <br>
+
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label for="">Data de nascimento</label>
+                                        <input type="date" name="nascimento" value="{{ nascimento }}"
+                                            class="form-control" placeholder="Data de nascimento" autofocus>
+                                    </div>
+                                    <div class="col-4">
+                                        <label for="">Sexo</label>
+                                        <select name="sexo" class="form-control" autofocus id="">
+                                            {% if sexo == Masculino %}
+                                            <option value="Masculino">Masculino</option>
+                                            <option value="Feminino">Feminino</option>
+                                            {% else %}
+                                            <option value="Feminino">Feminino</option>
+                                            <option value="Masculino">Masculino</option>
+                                            {% endif %}
+                                        </select>
+                                    </div>
+
+                                    <div class="col-4">
+                                        <label for="">CPF</label>
+                                        <input type="text" name="documento" value="{{ documento }}" class="form-control"
+                                            autofocus>
+                                    </div>
+                                </div>
+
+                                <br>
+                                <div>
+                                    <input type="submit" id="btnForms" value="Alterar" class="btn btn-lg btn-primary" autofocus>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </fieldset>
+    </article>
+</section>

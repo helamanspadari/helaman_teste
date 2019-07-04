@@ -1,0 +1,69 @@
+<section>
+
+    <br><br>
+
+    <article>
+        <header>
+            <a class="btn btn-primary float-right" href="http://localhost/helaman_teste/?page=passageiro">Voltar</a>
+            <h2>Novo Passageiro</h2>
+        </header>
+        <br>
+        <fieldset>
+            <legend>Dados do Passageiro</legend>
+
+            <div class="row">
+                <div class="col-12">
+
+                    <form action="http://localhost/helaman_teste/?page=passageiro&method=insert" method="POST">
+
+                        <div class="row">
+                            <div class="col-12">
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label for="">Nome Completo</label>
+                                        <input type="text" name="nome" class="form-control" placeholder="Nome Completo"
+                                            autofocus>
+                                    </div>
+                                </div>
+
+                                <br>
+
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label for="">Data de nascimento</label>
+                                        <input type="date" name="nascimento" class="form-control"
+                                            placeholder="Data de nascimento" autofocus>
+                                    </div>
+                                    <div class="col-4">
+                                        <label for="">Sexo</label>
+                                        <select name="sexo" class="form-control" autofocus id="">
+                                            <option value="Masculino">Masculino</option>
+                                            <option value="Feminino">Feminino</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-4">
+                                        <label for="">CPF</label>
+                                        <input type="text" name="documento" class="form-control" autofocus>
+                                    </div>
+                                </div>
+
+                                <br>
+                                <div>
+                                    <input type="submit" style="width: 100%;" value="Salvar" class="btn btn-lg btn-primary" autofocus>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </fieldset>
+
+
+    </article>
+</section>

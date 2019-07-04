@@ -1,0 +1,80 @@
+<section>
+
+    <br>
+    <h1>Corridas</h1>
+    <br>
+    <article>
+
+        <header>
+            <a href="http://localhost/helaman_teste/?page=corrida&method=new"
+                class="btn btn-secondary float-right">Adicionar</a>
+            <h2>Listagem das Corridas</h2>
+        </header>
+        <br>
+
+        <div class="row">
+            <div class="col-12">
+
+
+                <table class="table table-responsive table-hover" id="id_da_table">
+                    <thead style="background-color: #73f; color: white;">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">MOTORISTA</th>
+                            <th scope="col">PASSAGEIRO</th>
+                            <th scope="col">CORRIDA</th>
+                            <th scope="col">PAGAMENTO</th>
+                            <th scope="col">COMPLETAR</th>
+                            <th scope="col">INFORMAÇÕES</th>
+                            <th scope="col">TERMINAR</th>
+                            <th scope="col">PAGAMENTO</th>
+                        </tr>
+                    </thead>
+                    {% if erro %}
+                    <th colspan="12">{{ erro }}</th>
+                    {% endif %}
+                    <tbody>
+                        {% for corrida in corridas %}
+                        <tr>
+                            <th scope="row">{{ corrida.getId }}</th>
+                            <td>{{ corrida.nm_motorista }}</td>
+                            <td>{{ corrida.nm_passageiro }}</td>
+                            <td>
+                                {% if corrida.getStatusCorrida == true %}
+                                <span style="color:  green;">OCORRENDO</span>
+                                {% else %}
+                                <span style="color:  red;">TERMINADA</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if corrida.getStatusPagamento == true %}
+                                <span style="color:  green;">PAGO</span>
+                                {% else %}
+                                <span style="color:  red;">A PAGAR</span>
+                                {% endif %}
+                            </td>
+                            <td><a style="width:  100%;"
+                                    href="http://localhost/helaman_teste/?page=corrida&method=alter&id={{ corrida.getId }}"
+                                    class="btn btn-sm btn-info">COMPLETAR</a>
+                            </td>
+                            <td><a href="http://localhost/helaman_teste/?page=corrida&method=show&id={{ corrida.getId }}"
+                                    class="btn btn-sm btn-warning">VISUALIZAR</a>
+                            </td>
+                            <td><a style="width:  100%;"
+                                    href="http://localhost/helaman_teste/?page=corrida&method=remove&id={{ corrida.getId }}"
+                                    class="btn btn-sm btn-danger">FINALIZAR</a>
+                            </td>
+                            <td><a style="width:  100%;"
+                                    href="http://localhost/helaman_teste/?page=corrida&method=pay&id={{ corrida.getId }}"
+                                    class="btn btn-sm btn-success">PAGAR</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+    </article>
+</section>

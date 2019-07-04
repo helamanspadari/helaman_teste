@@ -1,0 +1,63 @@
+<section>
+
+    <br>
+    <a class="float-right btn btn-primary" href="http://localhost/helaman_teste/?page=corrida&method=list">Lista</a>
+    <a style="margin-right: 1%;" class="float-right btn btn-secondary" href="http://localhost/helaman_teste/?page=home">Home</a>
+    <h2>Informações da Corrida - #{{ corrida.getId }}</h2>
+    <br>
+
+    <div class="row">
+        <div class="col-12">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>{{ corrida.getId }} </th>
+                    </tr>
+                    <tr>
+                        <th>Motorista</th>
+                        <td>{{ corrida.nm_motorista }}</td>
+                    </tr>
+                    <tr>
+                        <th>Passageiro</th>
+                        <td>{{ corrida.nm_passageiro }}</td>
+                    </tr>
+                    <tr>
+                        <th>Data e Horario de Inicio</th>
+                        <td>{{ corrida.getDt_Hr_Inicio }}</td>
+                    </tr>
+                    <tr>
+                        <th>Data e Horario de Termino</th>
+                        <td>{{ corrida.getDt_Hr_Termino }}</td>
+                    </tr>
+                    <tr>
+                        <th>Distancia percorrida (KM)</th>
+                        <td>{{ corrida.getDistancia }}</td>
+                    </tr>
+                    <tr>
+                        <th>Valor final</th>
+                        <td>R$ {{ corrida.getValor }}</td>
+                    </tr>
+                    <tr>
+                        <th>Status da Corrida</th>
+                        {% if corrida.getStatusCorrida == true %}
+                        <td style="color: green;"><b>OCORRENDO</b></td>
+                        {% else %}
+                        <td style="color: red;"><b>TERMINADA</b></td>
+                        {% endif %}
+                    </tr>
+                    <tr>
+                        <th>Status do Pagamento</th>
+                        {% if corrida.getStatusPagamento == true %}
+                        <td style="color: green;"><b>PAGO</b></td>
+                        {% else %}
+                        <td style="color: red;"><b>EM ABERTO</b></td>
+                        {% endif %}
+                    </tr>
+                </thead>
+            </table>
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,6 @@
+* { margin: 0; padding: 0; }
+
+#navBrand { margin-left: 8%; }
+#btnNav { margin-right: 5px; width: 100px; }
+#aNav { margin-left: 8%; }
+#aNav:hover { margin-left: 8%; }

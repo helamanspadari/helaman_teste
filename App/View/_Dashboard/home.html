@@ -1,0 +1,158 @@
+<style>
+    .btns {
+        width: 100%;
+        height: 80px;
+        font: 22px Arial;
+        color: white;
+        background-color: #333;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10%;
+        text-decoration: none;
+        border: 2px solid #73f;
+    }
+
+    .btns:hover {
+        width: 100%;
+        height: 80px;
+        font: 22px Arial;
+        color: white;
+        background-color: #73f;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10%;
+        text-decoration: none;
+        border: 2px solid #333;
+    }
+</style>
+
+<div class="row">
+    <div class="col-12">
+
+        <br>
+        <h1>Dashboard</h1>
+
+        <div class="row">
+            <div class="col-md-4">
+                <i class=""></i>
+                <a class="btns" href="http://localhost/helaman_teste/?page=motorista">Motoristas</a>
+            </div>
+            <div class="col-md-4">
+                <i class=""></i>
+                <a class="btns" href="http://localhost/helaman_teste/?page=passageiro">Passageiros</a>
+            </div>
+            <div class="col-md-4">
+                <i class=""></i>
+                <a class="btns" href="http://localhost/helaman_teste/?page=corrida">Corridas</a>
+            </div>
+        </div>
+
+        <br><br>
+        <hr>
+        <br>
+
+        <div class="row">
+            <div class="col-7">
+
+                <h3>Corridas Acontecendo no Momento</h3>
+                <br>
+                <table class="table table-responsive table-hover" id="id_da_table">
+                    <thead style="background-color: #73f; color: white;">
+                        <tr>
+                            <th scope="col" style="width: 19%;">#</th>
+                            <th scope="col">STATUS CORRIDA</th>
+                            <th scope="col">STATUS PAGAMENTO</th>
+                            <th scope="col">VISUALIZAR</th>
+                        </tr>
+                    </thead>
+                    {% if erro %}
+                    <th colspan="4">{{ erro }}</th>
+                    {% endif %}
+                    <tbody>
+                        {% for corrida in corridas %}
+                        <tr>
+                            <th scope="row">{{ corrida.getId }}</th>
+                            <td>
+                                {% if corrida.getStatusCorrida == true %}
+                                <span style="color:  green;">
+                                    <center><b>CORRENDO</b></center>
+                                </span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if corrida.getStatusPagamento == true %}
+                                <span style="color:  green;">PAGO</span>
+                                {% else %}
+                                <span style="color:  red;">
+                                    <center><b>A PAGAR</b></center>
+                                </span>
+                                {% endif %}
+                            </td>
+                            <td><a href="http://localhost/helaman_teste/?page=corrida&method=show&id={{ corrida.getId }}"
+                                    class="btn btn-sm btn-warning">OBSERVAR</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="col-5">
+
+                <h3>Totais</h3>
+                <br>
+                <table class="table table-responsive table-hover">
+                    <tbody>
+                        <tr>
+                            <th rowspan="2" style="background-color: #333; padding-top: 7%; color: white;">Motoristas
+                            </th>
+                            <th style="background-color: #333; color: white;">Ativos</th>
+                            <th style="background-color: #333; color: white;">Livres</th>
+                            <th style="background-color: #333; color: white;">Ocupados</th>
+                            <th style="background-color: #333; color: white;">Total</th>
+                        </tr>
+                        <tr>
+                            <td>{{ ativosMotorista }}</td>
+                            <td>{{ livresMotorista }}</td>
+                            <td>{{ ocupadosMotorista }}</td>
+                            <td>{{ totalMotorista }}</td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2" style="background-color: #333; padding-top: 7%; color: white;">Passageiros
+                            </th>
+                            <th colspan="2" style="background-color: #333; color: white;">Em corrida</th>
+                            <th style="background-color: #333; color: white;">Livres</th>
+                            <th style="background-color: #333; color: white;">Total</th>
+                        </tr>
+                        <tr>
+                            <td colspan="2">{{ correndoPassageiro }}</td>
+                            <td>{{ livrePassageiro }}</td>
+                            <td>{{ totalPassageiro }}</td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2" style="background-color: #333; padding-top: 7%; color: white;">Corridas
+                            </th>
+                            <th style="background-color: #333; color: white;">Fazendo</th>
+                            <th style="background-color: #333; color: white;">Feitas</th>
+                            <th style="background-color: #333; color: white;">Pagas</th>
+                            <th style="background-color: #333; color: white;">Total</th>
+                        </tr>
+                        <tr>
+                            <td>{{ correndoCorrida }}</td>
+                            <td>{{ concluidaCorrida }}</td>
+                            <td>{{ pagasCorrida }}</td>
+                            <td>{{ totalCorrida }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+    </div>
+</div>

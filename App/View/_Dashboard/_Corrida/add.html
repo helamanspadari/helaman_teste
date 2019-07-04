@@ -1,0 +1,45 @@
+<section>
+    <article>
+        <br><br>
+        <header>
+            <a href="http://localhost/helaman_teste/?page=corrida&method=list"
+                class="btn btn-primary float-right">Voltar</a>
+            <h2>Iniciar Corrida</h2>
+        </header>
+        <br>
+
+        <fieldset>
+            <legend>Selecione quem participará da corrida</legend>
+            <br>
+
+            <div class="row">
+                <div class="col-12">
+
+                    <form action="http://localhost/helaman_teste/?page=corrida&method=insert" method="POST">
+                        <div>
+                            <label for="">Motorista</label>
+                            <select class="form-control" name="motoristaAtivoLivre" id="" autofocus>
+                                {% for motoristaAtivoLivre in motoristasAtivosLivres %}
+                                <option value="{{ motoristaAtivoLivre.getId }}">{{ motoristaAtivoLivre.getNome }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <br>
+                        <div>
+                            <label for="">Passageiro</label>
+                            <select class="form-control" name="passageiroLivre" id="" autofocus>
+                                {% for passageiroLivre in passageirosLivres %}
+                                <option value="{{ passageiroLivre.getId }}">{{ passageiroLivre.getNome }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <br>
+                        <div>
+                            <input type="submit" style="width: 100%;" class="btn btn-lg btn-primary" value="Iniciar">
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </fieldset>

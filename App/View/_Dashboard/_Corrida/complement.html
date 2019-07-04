@@ -1,0 +1,36 @@
+<section>
+    <br>
+    <h1>Preencher Complemento</h1>
+    <br>
+    <article>
+
+        <header>
+            <a href="http://localhost/helaman_teste/?page=corrida&method=list"
+                class="btn btn-primary float-right">Voltar</a>
+            <p>Informe a distancia percorrida para completar os dados da corrida</p>
+        </header>
+
+        <br>
+        <fieldset>
+            <legend> Distancia percorrida</legend>
+            
+            <div class="row">
+                <div class="col-12">
+
+                    <form action="http://localhost/helaman_teste/?page=corrida&method=complementInsert&id={{id}}"
+                        method="POST">
+                        <div>
+                            <label for="">Distancia em KM</label>
+                            <input type="number" max="150" min="0" name="distancia" class="form-control" autofocus>
+                        </div>
+                        <br>
+                        <div>
+                            <input type="submit" style="width: 100%;" class="btn btn-lg btn-primary"
+                                value="Complementar Informações">
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </fieldset>

@@ -1,0 +1,101 @@
+<section>
+
+    <br><br>
+
+    <article>
+        <header>
+            <a class="btn btn-primary float-right" href="http://localhost/helaman_teste/?page=motorista">Voltar</a>
+            <h2>Alterar Motorista</h2>
+        </header>
+        <br>
+
+        <form action="http://localhost/helaman_teste/?page=motorista&method=update&id={{id}}" method="POST">
+
+
+            <div class="row">
+                <div class="col-12">
+
+                    <fieldset disabled="disabled">
+                        <legend>Dados do Motorista</legend>
+                    </fieldset>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="">Nome</label>
+                            <input type="text" name="nome" value="{{ nome }}" class="form-control"
+                                placeholder="Nome Completo" autofocus>
+                        </div>
+                        <div class="col-3">
+                            <label for="">Nascimento</label>
+                            <input type="date" name="nascimento" value="{{ nascimento }}" class="form-control"
+                                placeholder="Nome Completo" autofocus>
+                        </div>
+                        <div class="col-3">
+                            <label for="">Sexo</label>
+                            <select name="sexo" id="" class="form-control" placeholder="Nome Completo" autofocus>
+                                {% if sexo == Masculino %}
+                                <option value="Masculino">{{sexo}}</option>
+                                <option value="Feminino">Feminino</option>
+                                {% else %}
+                                <option value="Feminino">{{sexo}}</option>
+                                <option value="Masculino">Masculino</option>
+
+                                {% endif %}
+                            </select>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="">Documento</label>
+                            <input type="text" name="documento" value="{{ documento }}" class="form-control"
+                                placeholder="Nome Completo" autofocus>
+                        </div>
+                        <div class="col-6">
+                            <label for="">Modelo do Veiculo</label>
+                            <input type="text" name="modeloCarro" value="{{ modeloCarro }}" class="form-control"
+                                placeholder="Nome Completo" autofocus>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="">Status Motorista</label>
+                            <select name="statusMotorista" id="" class="form-control">
+                                {% if statusMotorista == true %}
+                                <option value="Ativo">Ativo</option>
+                                <option value="Inativo">Inativo</option>
+                                {% else %}
+                                <option value="Inativo">Inativo</option>
+                                <option value="Ativo">Ativo</option>
+                                {% endif %}
+                            </select>
+                        </div>
+                        <div class="col-6">
+                            <label for="">Status Corrida</label>
+                            <select name="statusCorrida" id="" class="form-control">
+                                {% if statusCorridaMotorista == true %}
+                                <option value="Ocupado">Ocupado</option>
+                                <option value="Livre">Livre</option>
+                                {% else %}
+                                <option value="Livre">Livre</option>
+                                <option value="Ocupado">Ocupado</option>
+                                {% endif %}
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <br>
+            <div>
+                <input type="submit" value="Aterar" style="width: 100%;" class="btn btn-lg btn-primary">
+            </div>
+        </form>
+
+    </article>
+</section>
