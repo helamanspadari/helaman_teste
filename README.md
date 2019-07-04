@@ -14,6 +14,8 @@ Usando:
 - Estrutura MVC;
 - Mysql;
 - Usando um Core como coração da aplicação;
+- Composer + Twig;
+- Bootstrap, Datatable.
 
 A melhorar:
 - Não foi realizada muitas validações no sistema, principalmente no front-end;
